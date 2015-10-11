@@ -1,0 +1,2 @@
+new File(rootDir, 'deployment').eachDir { dir -> include "deployment/${dir.name}" }
+new File(rootDir, 'components').eachDir { dir -> include "components/${dir.name}" }

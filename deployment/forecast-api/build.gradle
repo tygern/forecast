@@ -1,0 +1,35 @@
+repositories {
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE")
+    }
+}
+
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'forecast-api'
+    version = '0.0.1'
+}
+
+apply from: "${getRootDir()}/java.gradle"
+
+dependencies {
+    compile (
+        "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+
+        project(":components/weather-service")
+    )
+
+    testCompile(
+        "org.springframework:spring-test:${springVersion}",
+        "org.mock-server:mockserver-netty:3.9.1",
+    )
+}
+
