@@ -4,6 +4,6 @@ dependencies {
     compile(
             "org.springframework:spring-web:${springVersion}",
 
-            project(":components/weather-http-adapter")
+            project(":components/forecast-connector")
     )
 }

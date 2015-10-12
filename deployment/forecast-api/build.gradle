@@ -24,7 +24,9 @@ dependencies {
     compile (
         "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
 
-        project(":components/weather-service")
+        project(":components/weather-service"),
+        project(":components/weather-http-adapter"),
+        project(":components/forecast-connector")
     )
 
     testCompile(

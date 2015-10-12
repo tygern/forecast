@@ -3,7 +3,6 @@ apply from: "${getRootDir()}/java.gradle"
 dependencies {
     compile(
             "org.springframework:spring-web:${springVersion}",
-
-            project(":components/forecast-connector")
+            "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
     )
 }

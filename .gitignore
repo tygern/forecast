@@ -1,6 +1,7 @@
 *.jar
 *.iml
 *.log
+*.application.yml
 build/
 .gradle
 gradle/
