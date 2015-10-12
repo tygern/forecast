@@ -3,22 +3,39 @@ package com.tygern.forecast.forecastconnector;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Forecast {
-        @JsonProperty("temperature") private float temperature;
-        @JsonProperty("description") private String description;
+    private double temp;
 
-        public float getTemperature() {
-                return temperature;
-        }
+    @JsonProperty("temp_min")
+    private double tempMin;
 
-        public void setTemperature(float temperature) {
-                this.temperature = temperature;
-        }
+    @JsonProperty("temp_max")
+    private double tempMax;
 
-        public String getDescription() {
-                return description;
-        }
+    public double getTemp() {
+        return toCelcius(temp);
+    }
 
-        public void setDescription(String description) {
-                this.description = description;
-        }
+    public void setTemp(double temp) {
+        this.temp = temp;
+    }
+
+    public double getTempMin() {
+        return toCelcius(tempMin);
+    }
+
+    public void setTempMin(double tempMin) {
+        this.tempMin = tempMin;
+    }
+
+    public double getTempMax() {
+        return toCelcius(tempMax);
+    }
+
+    public void setTempMax(double tempMax) {
+        this.tempMax = tempMax;
+    }
+
+    private double toCelcius(double tempKelvin) {
+        return tempKelvin - 273.15;
+    }
 }
